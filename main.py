@@ -10,7 +10,7 @@ import keyboard
 from Home_ui import *
 from Admin_ui import *
 from Add_product_ui import *
-from show_ui import *
+from Show_ui import *
 from welcome_ui import *
 
 connection = mysql.connector.connect(
@@ -24,7 +24,7 @@ cursor = connection.cursor()
 class HomeWindow(QMainWindow):
     def __init__(self):
         super(HomeWindow, self).__init__()
-        self.ui = home()
+        self.ui = Ui_home()
         self.ui.setupUi(self)
         self.ui.admin_button.clicked.connect(self.gotologin)
         self.ui.customer_button.clicked.connect(self.welcomee)
@@ -50,7 +50,7 @@ class HomeWindow(QMainWindow):
 class welcome(QMainWindow):
     def __init__(self):
         super(welcome,self).__init__()
-        self.ui = Ui_WelcomeWindow()
+        self.ui = Ui_welcome()
         self.ui.setupUi(self)
         self.ui.nextButton.clicked.connect(self.customer)
         # link หน้า show_customer
@@ -64,7 +64,7 @@ class welcome(QMainWindow):
 class Adminwindow(QMainWindow):
     def __init__(self):
         super(Adminwindow, self).__init__()
-        self.ui = Admin()
+        self.ui = Ui_Admin()
         self.ui.setupUi(self)
         self.setObjectName("Admin")
         self.setWindowIcon(QtGui.QIcon("001.jpg"))
@@ -114,7 +114,7 @@ class Adminwindow(QMainWindow):
 class add_productWindow(QMainWindow):
     def __init__(self):
         super(add_productWindow, self).__init__()
-        self.ui = Add_product()
+        self.ui = Ui_Add_product()
         self.ui.setupUi(self)
         self.setObjectName("Add_Product")
         self.setWindowIcon(QtGui.QIcon("001.jpg"))

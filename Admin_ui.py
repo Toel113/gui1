@@ -11,12 +11,13 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Admin(object):
+class Ui_Admin(object):
     def setupUi(self, Main):
         Main.setObjectName("Main")
         Main.resize(1200, 800)
+        Main.setMinimumSize(QtCore.QSize(1200, 800))
         Main.setMaximumSize(QtCore.QSize(1200, 800))
-        Main.setStyleSheet("background-color: rgb(0, 0, 0);")
+        Main.setStyleSheet("background-color: rgb(255, 248, 225);")
         self.centralwidget = QtWidgets.QWidget(Main)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -81,9 +82,10 @@ class Admin(object):
 "boeder:none;\n"
 "border-bottom:3px solid rgba(255, 0, 127, 255);\n"
 "padding-bottom:7px;\n"
-"border-radius:0px")
+"border-radius:0px\n"
+"")
         self.username_input.setCursorPosition(0)
-        self.username_input.setObjectName("usernameButton")
+        self.username_input.setObjectName("username_input")
         self.verticalLayout_3.addWidget(self.username_input)
         self.password_input = QtWidgets.QLineEdit(self.frame_6)
         self.password_input.setMaximumSize(QtCore.QSize(16777215, 60))
@@ -111,7 +113,7 @@ class Admin(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.frame_7)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.loginButton = QtWidgets.QPushButton(self.frame_7)
-        self.loginButton.setMaximumSize(QtCore.QSize(200, 70))
+        self.loginButton.setMaximumSize(QtCore.QSize(200, 80))
         font = QtGui.QFont()
         font.setFamily("Sitka Small")
         font.setPointSize(25)

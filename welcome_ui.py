@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\welcome.ui'
+# Form implementation generated from reading ui file 'c:\Users\TOEL\Documents\porjectEnd\Qtdesign\main_GUI\test001\ui\welcome.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -11,11 +11,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_WelcomeWindow(object):
+class Ui_welcome(object):
     def setupUi(self, WelcomeWindow):
         WelcomeWindow.setObjectName("WelcomeWindow")
-        WelcomeWindow.resize(1200, 800)
-        WelcomeWindow.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 183));")
+        WelcomeWindow.resize(1241, 800)
+        WelcomeWindow.setStyleSheet("background-color: rgb(255, 248, 225);")
         self.centralwidget = QtWidgets.QWidget(WelcomeWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -41,7 +41,7 @@ class Ui_WelcomeWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.label.setFont(font)
-        self.label.setStyleSheet("color: rgb(225, 0, 112);")
+        self.label.setStyleSheet("color: rgb(170, 170, 255)")
         self.label.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.label.setObjectName("label")
         self.horizontalLayout_2.addWidget(self.label)
@@ -108,12 +108,12 @@ class Ui_WelcomeWindow(object):
     def retranslateUi(self, WelcomeWindow):
         _translate = QtCore.QCoreApplication.translate
         WelcomeWindow.setWindowTitle(_translate("WelcomeWindow", "MainWindow"))
-        self.label.setText(_translate("WelcomeWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:48pt; font-weight:600; color:#00ffff;\">WELCOME CUSTOMER</span><span style=\" font-weight:600; color:#00ffff;\"><br/></span></p></body></html>"))
+        self.label.setText(_translate("WelcomeWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:48pt; color:#d8006c;\">WELCOME CUSTOMER</span><span style=\" color:#d8006c;\"><br/></span></p></body></html>"))
         self.label_2.setWhatsThis(_translate("WelcomeWindow", "<html><head/><body><p><img src=\":/newPrefix/Screenshot 2023-10-08 155427.jpg\"/></p></body></html>"))
         self.label_2.setText(_translate("WelcomeWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Magneto\'; font-size:7pt; font-weight:600; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'SimSun-ExtB\'; font-size:36pt; color:#ff007f;\">ขั้นตอนการทำงาน</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/newPrefix/2.jpg\" /></p></body></html>"))
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'SimSun-ExtB\'; font-size:36pt; color:#d8006c;\">ขั้นตอนการทำงาน</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/newPrefix/4.jpg\" /></p></body></html>"))
         self.nextButton.setText(_translate("WelcomeWindow", "Next"))

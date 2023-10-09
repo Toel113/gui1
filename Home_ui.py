@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\TOEL\Documents\Qtdesign\gui\Home.ui'
+# Form implementation generated from reading ui file '.\ui\Home.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -11,13 +11,13 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class home(object):
-    def setupUi(self, home):
-        home.setObjectName("home")
-        home.resize(1200, 720)
-        home.setMaximumSize(QtCore.QSize(1280, 720))
-        home.setStyleSheet("background-color: rgb(0, 0, 0);")
-        self.centralwidget = QtWidgets.QWidget(home)
+class Ui_home(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(1200, 720)
+        MainWindow.setMaximumSize(QtCore.QSize(1280, 720))
+        MainWindow.setStyleSheet("background-color: rgb(255, 248, 225);")
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName("horizontalLayout")
@@ -30,16 +30,19 @@ class home(object):
         self.frame_2 = QtWidgets.QFrame(self.frame)
         self.frame_2.setMaximumSize(QtCore.QSize(16777215, 340))
         font = QtGui.QFont()
+        font.setFamily("MingLiU-ExtB")
         font.setPointSize(11)
         self.frame_2.setFont(font)
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_2)
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
+        self.layoutWidget = QtWidgets.QWidget(self.frame_2)
+        self.layoutWidget.setGeometry(QtCore.QRect(250, 80, 767, 162))
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.layoutWidget)
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.label = QtWidgets.QLabel(self.frame_2)
+        self.label = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("Sitka")
         font.setPointSize(40)
@@ -48,10 +51,9 @@ class home(object):
         font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.label.setFont(font)
         self.label.setStyleSheet("color: rgb(255, 0, 127);")
-        self.label.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.label.setObjectName("label")
         self.verticalLayout_2.addWidget(self.label)
-        self.label_2 = QtWidgets.QLabel(self.frame_2)
+        self.label_2 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("Sitka")
         font.setPointSize(40)
@@ -59,10 +61,8 @@ class home(object):
         font.setWeight(75)
         self.label_2.setFont(font)
         self.label_2.setStyleSheet("color: rgb(255, 0, 127);")
-        self.label_2.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.label_2.setObjectName("label_2")
         self.verticalLayout_2.addWidget(self.label_2)
-        self.horizontalLayout_3.addLayout(self.verticalLayout_2)
         self.verticalLayout.addWidget(self.frame_2)
         self.frame_3 = QtWidgets.QFrame(self.frame)
         font = QtGui.QFont()
@@ -74,7 +74,7 @@ class home(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.frame_3)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.admin_button = QtWidgets.QPushButton(self.frame_3)
-        self.admin_button.setMaximumSize(QtCore.QSize(320, 120))
+        self.admin_button.setMaximumSize(QtCore.QSize(250, 120))
         font = QtGui.QFont()
         font.setFamily("Sitka")
         font.setPointSize(30)
@@ -100,13 +100,14 @@ class home(object):
         self.admin_button.setObjectName("admin_button")
         self.horizontalLayout_2.addWidget(self.admin_button)
         self.customer_button = QtWidgets.QPushButton(self.frame_3)
-        self.customer_button.setMaximumSize(QtCore.QSize(320, 120))
+        self.customer_button.setMaximumSize(QtCore.QSize(250, 120))
         font = QtGui.QFont()
         font.setFamily("Sitka")
         font.setPointSize(30)
         font.setBold(True)
         font.setWeight(75)
         self.customer_button.setFont(font)
+        self.customer_button.setToolTip("")
         self.customer_button.setStyleSheet("QPushButton#customer_button{\n"
 "    background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 0, 127, 255), stop:1 rgba(255, 201, 255, 255));\n"
 "    border-radius:5px;\n"
@@ -133,15 +134,15 @@ class home(object):
         self.frame_4.setObjectName("frame_4")
         self.verticalLayout.addWidget(self.frame_4)
         self.horizontalLayout.addWidget(self.frame)
-        home.setCentralWidget(self.centralwidget)
+        MainWindow.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(home)
-        QtCore.QMetaObject.connectSlotsByName(home)
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, home):
+    def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        home.setWindowTitle(_translate("home", "MainWindow"))
-        self.label.setText(_translate("home", "<html><head/><body><p align=\"center\">AUTOMATIC PAYMENT </p></body></html>"))
-        self.label_2.setText(_translate("home", "SYSTEM WITH ROBOTIC ARM"))
-        self.admin_button.setText(_translate("home", "ADMIN"))
-        self.customer_button.setText(_translate("home", "CUSTOMER"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\">AUTOMATIC PAYMENT </p></body></html>"))
+        self.label_2.setText(_translate("MainWindow", "SYSTEM WITH ROBOTIC ARM"))
+        self.admin_button.setText(_translate("MainWindow", "ADMIN"))
+        self.customer_button.setText(_translate("MainWindow", "CUSTOMER"))

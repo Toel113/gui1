@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\TOEL\Documents\porjectEnd\Qtdesign\main_GUI\test001\show .ui'
+# Form implementation generated from reading ui file '.\ui\show.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -15,7 +15,7 @@ class Ui_show2(object):
     def setupUi(self, show2):
         show2.setObjectName("show2")
         show2.resize(1200, 800)
-        show2.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 183));")
+        show2.setStyleSheet("background-color: rgb(255, 248, 225);")
         self.centralwidget = QtWidgets.QWidget(show2)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -124,7 +124,7 @@ class Ui_show2(object):
         self.label = QtWidgets.QLabel(self.frame_6)
         self.label.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("c:\\Users\\TOEL\\Documents\\porjectEnd\\Qtdesign\\main_GUI\\test001\\../../../Pictures/PrePro/image/003.png"))
+        self.label.setPixmap(QtGui.QPixmap(".\\ui\\../Pictures/PrePro/image/003.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.horizontalLayout_4.addWidget(self.label)
