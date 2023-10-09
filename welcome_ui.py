@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\TOEL\Documents\Qtdesign\main_GUI\test001\welcome.ui'
+# Form implementation generated from reading ui file '.\welcome.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -15,6 +15,7 @@ class Ui_WelcomeWindow(object):
     def setupUi(self, WelcomeWindow):
         WelcomeWindow.setObjectName("WelcomeWindow")
         WelcomeWindow.resize(1200, 800)
+        WelcomeWindow.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 183));")
         self.centralwidget = QtWidgets.QWidget(WelcomeWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -33,10 +34,14 @@ class Ui_WelcomeWindow(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.frame_2)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.label = QtWidgets.QLabel(self.frame_2)
-        self.label.setMaximumSize(QtCore.QSize(650, 120))
+        self.label.setMaximumSize(QtCore.QSize(800, 100))
         font = QtGui.QFont()
-        font.setPointSize(42)
+        font.setFamily("Perpetua Titling MT")
+        font.setPointSize(60)
+        font.setBold(True)
+        font.setWeight(75)
         self.label.setFont(font)
+        self.label.setStyleSheet("color: rgb(225, 0, 112);")
         self.label.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.label.setObjectName("label")
         self.horizontalLayout_2.addWidget(self.label)
@@ -48,6 +53,14 @@ class Ui_WelcomeWindow(object):
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.frame_4)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.label_2 = QtWidgets.QLabel(self.frame_4)
+        self.label_2.setMaximumSize(QtCore.QSize(1200, 700))
+        font = QtGui.QFont()
+        font.setFamily("Magneto")
+        font.setPointSize(7)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("")
         self.label_2.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.label_2.setObjectName("label_2")
         self.horizontalLayout_4.addWidget(self.label_2)
@@ -58,13 +71,33 @@ class Ui_WelcomeWindow(object):
         self.frame_3.setObjectName("frame_3")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_3)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.pushButton = QtWidgets.QPushButton(self.frame_3)
-        self.pushButton.setMaximumSize(QtCore.QSize(450, 200))
+        self.nextButton = QtWidgets.QPushButton(self.frame_3)
+        self.nextButton.setMaximumSize(QtCore.QSize(450, 180))
         font = QtGui.QFont()
-        font.setPointSize(50)
-        self.pushButton.setFont(font)
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_3.addWidget(self.pushButton)
+        font.setFamily("Palatino Linotype")
+        font.setPointSize(60)
+        font.setBold(True)
+        font.setWeight(75)
+        self.nextButton.setFont(font)
+        self.nextButton.setStyleSheet("\n"
+"QPushButton#nextButton{\n"
+"    background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 0, 127, 255), stop:1 rgba(255, 201, 255, 255));\n"
+"    border-radius:10px;\n"
+"}\n"
+"\n"
+"QPushButton#nextButton:hover{\n"
+"    background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(225, 255, 255, 255));\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton#nextButton:pressed{\n"
+"    padding-left:5px;\n"
+"    padding-top:5px;\n"
+"\n"
+"}\n"
+"")
+        self.nextButton.setObjectName("nextButton")
+        self.horizontalLayout_3.addWidget(self.nextButton)
         self.verticalLayout.addWidget(self.frame_3)
         self.horizontalLayout.addWidget(self.frame)
         WelcomeWindow.setCentralWidget(self.centralwidget)
@@ -75,6 +108,12 @@ class Ui_WelcomeWindow(object):
     def retranslateUi(self, WelcomeWindow):
         _translate = QtCore.QCoreApplication.translate
         WelcomeWindow.setWindowTitle(_translate("WelcomeWindow", "MainWindow"))
-        self.label.setText(_translate("WelcomeWindow", "Welcome customer "))
-        self.label_2.setText(_translate("WelcomeWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\"><br/>* หยิบของใส่ในกรอบก่อน ถึง กดปุ่ม Next *<br/>|<br/>|</span></p><p align=\"center\"><span style=\" font-size:12pt;\">|<br/>v </span></p></body></html>"))
-        self.pushButton.setText(_translate("WelcomeWindow", "Next"))
+        self.label.setText(_translate("WelcomeWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:48pt; font-weight:600; color:#00ffff;\">WELCOME CUSTOMER</span><span style=\" font-weight:600; color:#00ffff;\"><br/></span></p></body></html>"))
+        self.label_2.setWhatsThis(_translate("WelcomeWindow", "<html><head/><body><p><img src=\":/newPrefix/Screenshot 2023-10-08 155427.jpg\"/></p></body></html>"))
+        self.label_2.setText(_translate("WelcomeWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Magneto\'; font-size:7pt; font-weight:600; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'SimSun-ExtB\'; font-size:36pt; color:#ff007f;\">ขั้นตอนการทำงาน</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/newPrefix/2.jpg\" /></p></body></html>"))
+        self.nextButton.setText(_translate("WelcomeWindow", "Next"))

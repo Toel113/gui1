@@ -15,7 +15,6 @@ class Admin(object):
     def setupUi(self, Main):
         Main.setObjectName("Main")
         Main.resize(1200, 800)
-        Main.setMinimumSize(QtCore.QSize(1200, 800))
         Main.setMaximumSize(QtCore.QSize(1200, 800))
         Main.setStyleSheet("background-color: rgb(0, 0, 0);")
         self.centralwidget = QtWidgets.QWidget(Main)

@@ -1,7 +1,0 @@
-#username_input{
-    border-radius: 80%;
-
-}
-#frame{
-    background-color: rgb(227, 155, 155);
-}

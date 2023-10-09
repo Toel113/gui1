@@ -14,8 +14,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Add_product(object):
     def setupUi(self, Add_product):
         Add_product.setObjectName("Add_product")
-        Add_product.resize(1200, 720)
-        Add_product.setMaximumSize(QtCore.QSize(1280, 720))
+        Add_product.resize(1200, 800)
+        Add_product.setMaximumSize(QtCore.QSize(1200, 800))
         Add_product.setStyleSheet("background-color: rgb(0, 0, 0);")
         self.centralwidget = QtWidgets.QWidget(Add_product)
         self.centralwidget.setObjectName("centralwidget")

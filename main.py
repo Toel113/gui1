@@ -10,8 +10,7 @@ import keyboard
 from Home_ui import *
 from Admin_ui import *
 from Add_product_ui import *
-from Show_customer_ui import *
-from payment_ui import *
+from show_ui import *
 from welcome_ui import *
 
 connection = mysql.connector.connect(
@@ -25,7 +24,6 @@ cursor = connection.cursor()
 class HomeWindow(QMainWindow):
     def __init__(self):
         super(HomeWindow, self).__init__()
-
         self.ui = home()
         self.ui.setupUi(self)
         self.ui.admin_button.clicked.connect(self.gotologin)
@@ -34,12 +32,12 @@ class HomeWindow(QMainWindow):
         self.setWindowIcon(QtGui.QIcon("001.jpg"))
         self.setMinimumSize(QtCore.QSize(1200, 800))
         self.setMaximumSize(QtCore.QSize(1200, 800))
-        
+        # link หน้า Admin
     def gotologin(self):
         login=Adminwindow()
         widget.addWidget(login)
         widget.setCurrentIndex(widget.currentIndex()+1)
-
+        #  link หน้า welcome
     def welcomee(self):
         Welcome= welcome()
         widget.addWidget(Welcome)
@@ -54,8 +52,8 @@ class welcome(QMainWindow):
         super(welcome,self).__init__()
         self.ui = Ui_WelcomeWindow()
         self.ui.setupUi(self)
-        self.ui.pushButton.clicked.connect(self.customer)
-
+        self.ui.nextButton.clicked.connect(self.customer)
+        # link หน้า show_customer
     def customer(self):
         customer=customerwindow()
         widget.addWidget(customer)
@@ -66,7 +64,6 @@ class welcome(QMainWindow):
 class Adminwindow(QMainWindow):
     def __init__(self):
         super(Adminwindow, self).__init__()
-
         self.ui = Admin()
         self.ui.setupUi(self)
         self.setObjectName("Admin")
@@ -74,7 +71,7 @@ class Adminwindow(QMainWindow):
         self.setMinimumSize(QtCore.QSize(1200, 800))
         self.setMaximumSize(QtCore.QSize(1200, 800))
         self.ui.loginButton.clicked.connect(self.login)
-
+    # algorithm login
     def login(self):
         username = self.ui.username_input.text()
         password = self.ui.password_input.text()
@@ -103,14 +100,13 @@ class Adminwindow(QMainWindow):
 
         except mysql.connector.Error as err:
             print("Error: {}".format(err))
-
+        # link หน้า addProduct
     def open_add_productWindow(self):
         self.add_product_window = add_productWindow()
         self.add_product_window.show()
 
 
 # End Class Admin_ui -------------------------------------------------------------------------------------------------
-
 
 
 
@@ -126,7 +122,7 @@ class add_productWindow(QMainWindow):
         self.setMaximumSize(QtCore.QSize(1200, 800))
         self.ui.AddButton.clicked.connect(self.add_product)
         self.ui.LoadButton.clicked.connect(self.load_data)
-
+    # algorithm addproduct
     def add_product(self):
         name = self.ui.name_input.text()
         barcode = self.ui.barcode_input.text()
@@ -166,7 +162,7 @@ class add_productWindow(QMainWindow):
         except mysql.connector.Error as err:
             print("Error: {}".format(err))
             QMessageBox.warning(self, 'Error', 'An error occurred while adding the product.')
-
+    # load data
     def load_data(self):
         try:
             connection = mysql.connector.connect(
@@ -199,7 +195,7 @@ class add_productWindow(QMainWindow):
             print("Error: {}".format(err))
             QMessageBox.warning(self, 'Error', 'An error occurred while loading data.')
 
-
+    # delete data
     def delete_product(self,row):  
         try:
             connection = mysql.connector.connect(
@@ -229,7 +225,7 @@ class add_productWindow(QMainWindow):
         except mysql.connector.Error as err:
             print("Error: {}".format(err))
             QMessageBox.warning(self, 'Error', 'An error occurred while deleting the product.')
-
+    # clear input 
     def clear_inputs(self):
         self.ui.name_input.clear()
         self.ui.barcode_input.clear()
@@ -244,10 +240,10 @@ class add_productWindow(QMainWindow):
 class customerwindow(QMainWindow):
     def __init__(self):
         super(customerwindow, self).__init__()
-        self.ui = Ui_Customer_show()
+        self.ui =  Ui_show2()
         self.ui.setupUi(self)
         self.total_price = 0
-        self.ui.payButton.clicked.connect(self.open_payment_window)
+        # self.ui.payButton.clicked.connect(self.open_payment_window) use load generate
         self.setObjectName("Customer")
         self.setWindowIcon(QtGui.QIcon("001.jpg"))
         self.setMinimumSize(QtCore.QSize(1200, 800))
@@ -256,8 +252,6 @@ class customerwindow(QMainWindow):
         self.scanner_thread.start()
         self.last_scanned_barcode = None
         self.current_quantity = None
-
-
 
 
     def scan_product(self, barcode):
@@ -322,15 +316,6 @@ class customerwindow(QMainWindow):
                 return row
         return None
 
-
-
-
-
-    def open_payment_window(self):
-        pay= PaymentWindow(self.total_price)
-        widget.addWidget(pay)
-        widget.setCurrentIndex(widget.currentIndex()+1)
-
 class ScannerThread(threading.Thread):
     def __init__(self, callback):
         threading.Thread.__init__(self)
@@ -353,16 +338,6 @@ class ScannerThread(threading.Thread):
 
 # Start class payment *-------------------------------------------------------------------------------------------------------------------------------------------------
 
-class PaymentWindow(QMainWindow):
-    def __init__(self,total_price):
-        super(PaymentWindow,self).__init__()
-        self.ui = Ui_payment()
-        self.ui.setupUi(self)
-        self.paymentd(total_price)
-
-    def paymentd(self, total_price):
-        self.ui.total_label2.setText(f'Total Price : {total_price:.2f}')
-        self.ui.total_label2.setFont(QFont('Arial', 20))
 
 # End class payment -----------------------------------------------------------------------------------------------------------------------------------------------------
 
